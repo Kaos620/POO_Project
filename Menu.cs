@@ -11,7 +11,7 @@ namespace Trabalho_Robinho
         public static void MenuExercicios()
         {
             Console.WriteLine("Escolha uma das Opções: ");
-            Console.WriteLine("\n[1] = Exercicio 1\n[2] = Exercicio 2\n[3] = Exercicio 3\n[4] = Exercicio 4");
+            Console.WriteLine("\n[1] = Exercicio 1\n[2] = Exercicio 2\n[3] = Exercicio 3\n[4] = Exercicio 4 \n[9] = Exercício 9");
             int opcao = int.Parse(Console.ReadLine());
 
             if (opcao == 1)
@@ -70,7 +70,7 @@ namespace Trabalho_Robinho
                 Console.Read();
             }
 
-            else
+            else if (opcao == 4)
             {
                 List<Aluno> listaAlunos = new List<Aluno>();
 
@@ -109,6 +109,13 @@ namespace Trabalho_Robinho
 
                     aluno.ImprimirNotaFinal();
                 }
+            }
+            else
+            {
+                Biblioteca biblioteca = new Biblioteca();
+                biblioteca.MenuBiblioteca();
+                biblioteca.RegistrarLivro();
+                
             }
         }
     }
