@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -7,37 +8,25 @@ using System.Threading.Tasks;
 
 namespace Trabalho_Robinho
 {
-    internal class Biblioteca : Livro
+    internal class Biblioteca
+
     {
-        public void MenuBiblioteca()
+        List<Livro> listaLivros = new List<Livro>();
+        public void AdicionarLivros(Livro livro)
         {
-                    Console.WriteLine("-------Menu da Biblioteca-------" +
-            "\n Selecione a opção desejada \n" +
-            "[A] Adicionar livro\n" +
-            "[B] Remover livro\n" +
-            "[C] Listar livros\n" +
-            "[D] Listar livros em Ordem Alfabetica\n" +
-            "[E] Listar livros por Idioma\n");
+            listaLivros.Add(livro);
         }
-        public void Livros()
+        public void RemoverLivro(string ISBN)
         {
-            List<string> listaLivros = new List<string>();
-            char menuBiblioteca = ' ';
-            char menuBilioteca = char.Parse(Console.ReadLine());
-
-            if (menuBiblioteca == 'a') 
+            Livro livroRemovido = listaLivros.Find(livroExpecifico => livroExpecifico.ISBN == ISBN);
+            if (livroRemovido != null)
             {
-                Console.WriteLine("Quantos Livros deseja adicionar ? \n");
-                int contador = 0;
-                Livro livro = new Livro();
-                contador = Convert.ToInt32(Console.ReadLine());
-                for (int i = 0; i < contador; i++) 
-                {
-                    livro.RegistrarLivro();
-                }
-
+                listaLivros.Remove(livroRemovido);
             }
-
+            else
+            {
+                Console.WriteLine($"Livro de ISBN {ISBN} nao encontrado:");
+            }
         }
     }
 }

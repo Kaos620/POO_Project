@@ -8,9 +8,9 @@ namespace Trabalho_Robinho
 {
     internal class Autor
     {
-        public string Name { get; set; }
-        public string HomeCountry { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string HomeLanguage { get; set; }
+        public string NomeAutor { get; set; }
+        public string PaisAutor { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public string LinguagemOrigem { get; set; }
     }
 }
