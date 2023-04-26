@@ -112,10 +112,8 @@ namespace Trabalho_Robinho
             }
             else
             {
-                Biblioteca biblioteca = new Biblioteca();
-                biblioteca.MenuBiblioteca();
-                biblioteca.RegistrarLivro();
-                
+                MenuBiblioteca menuBiblioteca = new MenuBiblioteca();
+                menuBiblioteca.BibliotecaMenu();
             }
         }
     }
